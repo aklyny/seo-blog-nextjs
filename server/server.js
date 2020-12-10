@@ -23,7 +23,7 @@ const  app = express()
 
 //middlewares
 app.use(morgan('dev'))
-app.use(bodyParser.json())
+app.use(express.json());
 app.use(cookieParser())
 
 //cors

@@ -3,6 +3,7 @@ const shortId = require('shortid')
 const jwt = require('jsonwebtoken')
 const expressJwt = require('express-jwt')
 
+
 exports.signUp = (req,res)=>{
 
     
