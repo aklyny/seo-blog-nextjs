@@ -65,7 +65,7 @@ const Category = ()=>{
         <form onSubmit={submitHandle}>
             <div className="form-group">
                 <label className="text-muted">Name</label>
-                <input type="text" className="form-control" onChange={handleChange} value={name} required />
+                <input type="text" placeholder="Create a Category" className="form-control" onChange={handleChange} value={name} required />
             </div>
             <div>
             <button type="submit" className="btn btn-primary">Create</button>

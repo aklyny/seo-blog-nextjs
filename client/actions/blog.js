@@ -1,15 +1,14 @@
 import fetch from 'isomorphic-fetch'
 import {API} from '../config'
 
-export const create =(tag,token)=> {
-    return fetch(`${API}/tag`,{
+export const createBlog =(blog,token)=> {
+    return fetch(`${API}/blog`,{
         method:'POST',
         headers:{
             Accept:'application/json',
-            'Content-Type':'application/json',
             Authorization: `Bearer ${token}`
         },
-        body:JSON.stringify(tag)
+        body:blog
     })
     .then(res=>{
         return res.json()
@@ -17,8 +16,8 @@ export const create =(tag,token)=> {
     .catch(err=>console.log(err)) 
 }
 
-export const getTag =()=> {
-    return fetch(`${API}/tags`,{
+export const getCategory =()=> {
+    return fetch(`${API}/categories`,{
         method:'GET',
     })
     .then(res=>{
@@ -26,8 +25,8 @@ export const getTag =()=> {
     })
     .catch(err=>console.log(err))
 }
-export const SingleTag =(slug)=> {
-    return fetch(`${API}/tag/${slug}`,{
+export const SingleCategory =(slug)=> {
+    return fetch(`${API}/category/${slug}`,{
         method:'GET',
     })
     .then(res=>{
@@ -36,8 +35,8 @@ export const SingleTag =(slug)=> {
     .catch(err=>console.log(err))
 }
 
-export const removeTag =(slug,token)=> {
-    return fetch(`${API}/tag/${slug}`,{
+export const removeCategory =(slug,token)=> {
+    return fetch(`${API}/category/${slug}`,{
         method:'DELETE',
         headers:{
             Accept:'application/json',

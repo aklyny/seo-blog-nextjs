@@ -2,10 +2,11 @@ import React from 'react'
 import Layout from '../../../components/layout'
 import Link from 'next/link'
 import Admin from '../../../components/auth/admin'
-import Category from '../../../components/crud/category'
-import  Tag  from './tag'
+import BlogCreate from '../../../components/crud/blogCreate'
 
-class CategoryTag extends React.Component{
+
+
+class Blog extends React.Component{
     render(){
         return(
             <Layout>
@@ -13,13 +14,10 @@ class CategoryTag extends React.Component{
                     <div className="container-fluid">
                         <div className="row">
                             <div className="col-md-12 pt-5 pb-5">
-                                <h2 className="text-center">Manage Categories and Tags</h2>
+                                <h2 className="text-center">Create a new Blog</h2>
                             </div>
-                            <div className="col-md-6">
-                                <Category />
-                            </div>
-                            <div className="col-md-6">
-                                <Tag />
+                            <div className="col-md-12   ">
+                                <BlogCreate />
                             </div>
                         </div>
                     </div>
@@ -30,4 +28,4 @@ class CategoryTag extends React.Component{
 }
 
 
-export default CategoryTag;
+export default Blog;
