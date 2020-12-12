@@ -16,36 +16,16 @@ export const createBlog =(blog,token)=> {
     .catch(err=>console.log(err)) 
 }
 
-export const getCategory =()=> {
-    return fetch(`${API}/categories`,{
-        method:'GET',
+export const listBlogsWithCategoriesAndTags = () => {
+    return fetch(`${API}/blogs-categories-tags`, {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json'
+        }
     })
-    .then(res=>{
-        return res.json()
-    })
-    .catch(err=>console.log(err))
-}
-export const SingleCategory =(slug)=> {
-    return fetch(`${API}/category/${slug}`,{
-        method:'GET',
-    })
-    .then(res=>{
-        return res.json()
-    })
-    .catch(err=>console.log(err))
-}
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
 
-export const removeCategory =(slug,token)=> {
-    return fetch(`${API}/category/${slug}`,{
-        method:'DELETE',
-        headers:{
-            Accept:'application/json',
-            'Content-Type':'application/json',
-            Authorization:`Bearer ${token}`
-        },
-    })
-    .then(res=>{
-        return res.json()
-    })
-    .catch(err=>console.log(err))
-}
