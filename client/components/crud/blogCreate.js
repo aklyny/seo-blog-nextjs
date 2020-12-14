@@ -125,7 +125,7 @@ const BlogCreate = ({router})=>{
                     <ReactQuill modules={QuillModules} formats={QuillFormats}
                      value={body} 
                      placeholder="write something amazing..."
-                      onChange={handleBody} 
+                    onChange={handleBody} 
 
                       />
                 </div>

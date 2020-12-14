@@ -120,6 +120,23 @@ const SingleBlog = ({ blog, query }) => {
                     </article>
                 </main>
             </Layout>
+            <style>
+                {
+                    `
+                    .featured-image{
+                            width: 100%;
+                            max-height: 500px;
+                            object-fit: cover;
+                            margin-top:20px;
+                        }
+                    img{
+                        background-size:cover;
+                        background-position:center;
+                        object-fit:cover;
+                    }    
+                    `
+                }
+            </style>
         </React.Fragment>
     );
 };
